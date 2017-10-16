@@ -1,0 +1,34 @@
+{
+  "name": "styled-jsx-plugin-less",
+  "version": "0.0.1",
+  "description": "Plugin to add Less support to styled-jsx",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erasmo-marin/styled-jsx-plugin-less.git"
+  },
+  "keywords": [
+    "styled-jsx-plugin",
+    "styled-jsx",
+    "less"
+  ],
+  "author": "Erasmo Marín",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erasmo-marin/styled-jsx-plugin-less/issues"
+  },
+  "homepage": "https://github.com/erasmo-marin/styled-jsx-plugin-less#readme",
+  "peerDependencies": {
+    "less": "^2.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "strip-indent": "^2.0.0"
+  },
+  "dependencies": {
+    "deasync": "^0.1.10"
+  }
+}
