@@ -4,15 +4,17 @@ const plugin = require('./')
 
 const cleanup = str => stripIndent(str).trim()
 
-describe('styled-jsx-plugin-sass', () => {
-  it('applies plugins', () => {
+describe('styled-jsx-plugin-less', () => {
+  it('applies variables', () => {
     assert.equal(
-      plugin('p { img { display: block} color: color(red a(90%)) }').trim(),
+      plugin('@red: #fff; p { img { display: block} color: @red }').trim(),
       cleanup(`
         p {
-          color: color(red a(90%)); }
-          p img {
-            display: block; }
+          color: #fff;
+        }
+        p img {
+          display: block;
+        }
       `)
     )
   })
@@ -22,10 +24,11 @@ describe('styled-jsx-plugin-sass', () => {
       plugin('p { img { display: block } color: %%styled-jsx-expression-1%%; } %%styled-jsx-expression-1%%').trim(),
       cleanup(`
         p {
-          color: %%styled-jsx-expression-1%%; }
-          p img {
-            display: block; }
-
+          color: %%styled-jsx-expression-1%%;
+        }
+        p img {
+          display: block;
+        }
         %%styled-jsx-expression-1%%
       `)
     )
@@ -36,10 +39,11 @@ describe('styled-jsx-plugin-sass', () => {
       plugin('@import "fixture"; p { color: red }').trim(),
       cleanup(`
         div {
-          color: red; }
-
+          color: red;
+        }
         p {
-          color: red; }
+          color: red;
+        }
       `)
     )
   })

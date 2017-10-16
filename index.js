@@ -22,6 +22,9 @@ module.exports = (css, settings) => {
 
     less.render(cssWithPlaceholders, settings).then(function(output) {
         resolved(output.css);
+    }).catch(function(error) {
+        resolved("");
+        console.log(error);
     });
 
     loopWhile(() => wait);
