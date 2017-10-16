@@ -1,7 +1,4 @@
-# styled-jsx-plugin-sass
-
-[![Build Status](https://travis-ci.org/giuseppeg/styled-jsx-plugin-sass.svg?branch=master)](https://travis-ci.org/giuseppeg/styled-jsx-plugin-sass)
-[![npm](https://img.shields.io/npm/v/styled-jsx-plugin-sass.svg)](https://www.npmjs.com/package/styled-jsx-plugin-sass)
+# styled-jsx-plugin-less
 
 Use [less](http://lesscss.org/) with [styled-jsx](https://github.com/zeit/styled-jsx) 💥
 
