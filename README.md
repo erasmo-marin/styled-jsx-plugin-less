@@ -7,7 +7,7 @@ Use [less](http://lesscss.org/) with [styled-jsx](https://github.com/zeit/styled
 Install the package first.
 
 ```bash
-npm install --save-dev styled-jsx-plugin-less
+npm install --save-dev styled-jsx-plugin-less@alpha
 ```
 
 Install `less` (it is a peer dependency).
