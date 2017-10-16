@@ -1,6 +1,6 @@
 {
   "name": "styled-jsx-plugin-less",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Plugin to add Less support to styled-jsx",
   "main": "index.js",
   "scripts": {
