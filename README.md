@@ -31,9 +31,9 @@ Next, add `styled-jsx-plugin-less` to the `styled-jsx`'s `plugins` in your babel
 
 #### Notes
 
-`styled-jsx-plugin-less` uses `styled-jsx`'s plugin system which is supported from version 2.
+`styled-jsx-plugin-less` uses [`styled-jsx`](https://github.com/zeit/styled-jsx)'s plugin system which is supported from version 2.
 
-Read more on their repository for further info.
+[Read more](https://github.com/zeit/styled-jsx) on their repository for further info.
 
 ## License
 
