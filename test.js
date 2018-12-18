@@ -21,7 +21,7 @@ describe('styled-jsx-plugin-less', () => {
 
   it('works with expressions placeholders', () => {
     assert.equal(
-      plugin('p { img { display: block } color: %%styled-jsx-placeholder-1%%; } %%styled-jsx-placeholder-1%%').trim(),
+      plugin('p { img { display: block } color: %%styled-jsx-placeholder-1%%; }').trim(),
       cleanup(`
         p {
           color: %%styled-jsx-placeholder-1%%;
@@ -29,7 +29,6 @@ describe('styled-jsx-plugin-less', () => {
         p img {
           display: block;
         }
-        %%styled-jsx-placeholder-1%%
       `)
     )
   })

@@ -4,13 +4,13 @@ const loopWhile = require("deasync").loopWhile;
 module.exports = (css, settings) => {
     const cssWithPlaceholders = css
         .replace(
-            /\:\s*%%styled-jsx-placeholder-(\d+)%%/g,
-            (_, id) => `: styled-jsx-placeholder-${id}()`
-        )
-        .replace(
             /%%styled-jsx-placeholder-(\d+)%%/g,
-            (_, id) => `/*%%styled-jsx-placeholder-${id}%%*/`
-        );
+            (_, id) => `styled-jsx-placeholder-${id}`
+        )
+        // .replace(
+        //     /%%styled-jsx-placeholder-(\d+)%%/g,
+        //     (_, id) => `/*%%styled-jsx-placeholder-${id}%%*/`
+        // );
 
     let wait = true;
     let preprocessed = "";
@@ -20,9 +20,9 @@ module.exports = (css, settings) => {
         wait = false;
     }
 
-    less.render(cssWithPlaceholders, settings).then(function(output) {
+    less.render(cssWithPlaceholders, settings).then(function (output) {
         resolved(output.css);
-    }).catch(function(error) {
+    }).catch(function (error) {
         resolved("");
         console.log(error);
     });
@@ -31,11 +31,11 @@ module.exports = (css, settings) => {
 
     return preprocessed
         .replace(
-            /\:\s*styled-jsx-placeholder-(\d+)\(\)/g,
-            (_, id) => `: %%styled-jsx-placeholder-${id}%%`
-        )
-        .replace(
-            /\/\*%%styled-jsx-placeholder-(\d+)%%\*\//g,
+            /styled-jsx-placeholder-(\d+)/g,
             (_, id) => `%%styled-jsx-placeholder-${id}%%`
-        );
+        )
+        // .replace(
+        //     /\/\*%%styled-jsx-placeholder-(\d+)%%\*\//g,
+        //     (_, id) => `%%styled-jsx-placeholder-${id}%%`
+        // );
 };
