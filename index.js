@@ -2,6 +2,7 @@ const less = require("less");
 const loopWhile = require("deasync").loopWhile;
 
 module.exports = (css, settings) => {
+    const file = settings.babel && settings.babel.filename;
     const cssWithPlaceholders = css
         .replace(
             /\:\s*%%styled-jsx-placeholder-(\d+)%%/g,
@@ -20,6 +21,7 @@ module.exports = (css, settings) => {
         wait = false;
     }
 
+    settings.filename = settings.filename  || file;
     less.render(cssWithPlaceholders, settings).then(function(output) {
         resolved(output.css);
     }).catch(function(error) {
